@@ -14,12 +14,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// 页面
+var appPageRouter = require('./routes/app-page');
 
+// 路由
 var dreamRouter = require('./routes/dream');
-var usersRouter = require('./routes/users');
+// 页面
+app.use('/', appPageRouter);
 
 app.use('/api/dream', dreamRouter);
-app.use('/users', usersRouter);
 
 
 
