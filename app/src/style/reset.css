@@ -1,0 +1,22 @@
+@font-face {
+    font-family: "Huluobos-Regular-东方大楷";
+    font-weight: 400;
+    src: url("./style/font/Regular/Alimama_DongFangDaKai_Regular.woff") format("woff");
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Huluobos-Regular-普惠体";
+    font-weight: 400;
+    src: url("./style/font/PuHuiTi/Alibaba_PuHuiTi_2.0_55_Regular_55_Regular.woff") format("woff");
+    font-display: swap;
+  }
+  
+  
+  * {
+    font-family: "Huluobos-Regular-普惠体";
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    box-sizing: border-box;
+  }
