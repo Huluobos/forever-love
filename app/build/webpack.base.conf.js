@@ -49,10 +49,6 @@ module.exports = {
         }
       },
       {
-        test: /\.(css|scss)(\?.*)?$/,
-        loader: 'sass-loader!style-loader!css-loader',
-      },
-      {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
         loader: 'url-loader',
         options: {

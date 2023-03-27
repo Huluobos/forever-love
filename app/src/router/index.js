@@ -7,19 +7,27 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'index',
-      component:()=>import('@/views/index/index'),
+      name: 'layout',
+      component:()=>import('@/views/layout/layout'),
+      children:[
+        {
+          path: '/',
+          name: 'index',
+          component:()=>import('@/views/index/index'),
+        },
+        {
+          path: 'draw',
+          name: 'draw',
+          component:()=>import('@/views/draw/draw'),
+        },
+        {
+          path: 'list',
+          name: 'list',
+          component:()=>import('@/views/list/list'),
+        }
+      ]
     },
-    {
-      path: '/draw',
-      name: 'draw',
-      component:()=>import('@/views/draw/draw'),
-    },
-    {
-      path: '/list',
-      name: 'list',
-      component:()=>import('@/views/list/list'),
-    }
+   
 
   ]
 })
