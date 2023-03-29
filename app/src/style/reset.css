@@ -14,8 +14,16 @@
   
   
   * {
-    font-family: "Huluobos-Regular-普惠体";
+    font-family: "Helvetica,Charter,PingFang SC,Microsoft YaHei,Arial,sans-serif";
     padding: 0;
     margin: 0;
     white-space: nowrap;
+  }
+  .fontK{
+    /* font-family: "Huluobos-Regular-东方大楷"; */
+  }
+  body{
+    background-color: #f7f7f7;
+    color: #000;
+    font-size: 13px;
   }

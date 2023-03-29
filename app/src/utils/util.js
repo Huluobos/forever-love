@@ -157,3 +157,39 @@ export function timeLeft (startTime, endTime) {
   }
   return { d, h, m, s }
 }
+
+/**
+ * @desc 获取年月日 
+ * @param { Date | String } 1111111111111
+ * @returns { String } 2012-2-12 
+ */
+export function timeTrans(ns) {  
+  let date = new Date(ns*1) //防止ns是字符
+  let Y = date.getFullYear(); //获取系统的年；
+  let M = date.getMonth() + 1; //获取系统月份，由于月份是从0开始计算，所以要加1
+  let D = date.getDate(); //获取系统日
+  M = M < 10 ? '0' + M : M
+  D = D < 10 ? '0' + D : D
+  return Y + '-' + M + '-' + D 
+} 
+
+/**
+ * @desc 获取年月日 时分秒 
+ * @param { Date | String } 1111111111111
+ * @returns { String } 2012-02-12 01:01:01
+ */
+export function timeAlls(ns) {  
+  // new Date().getTime() 获取时间戳精确到毫秒,13位
+  let date = new Date(ns*1) //防止ns是字符
+  let Y = date.getFullYear(); //获取系统的年；
+  let M = date.getMonth() + 1; //获取系统月份，由于月份是从0开始计算，所以要加1
+  let D = date.getDate(); //获取系统日
+  let H = date.getHours(); //获取系统时间
+  let m = date.getMinutes() > 10 ? date.getMinutes() : '0' + date.getMinutes(); //分
+  let s = date.getSeconds(); //秒
+  M = M < 10 ? '0' + M : M
+  D = D < 10 ? '0' + D : D
+  H = H < 10 ? '0' + H : H
+  s = s < 10 ? '0' + s : s
+  return Y + '-' + M + '-' + D + ' ' + H + ':' + m + ':' + s
+} 

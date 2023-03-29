@@ -4,8 +4,9 @@
       <!-- <router-link to='/draw'>draw</router-link>
       <router-link to='/list'>list</router-link>
             
-     
+     1111111111111111111111111111111FFFFF 
     -->
+    AHSGSDHHSOJCdn道具宝石记得
     </div>
 
   </div>
@@ -29,14 +30,8 @@ export default {
 }
 </script>
 
-<style>
-.content {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+<style scoped>
+
 
 
 </style>

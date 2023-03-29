@@ -1,7 +1,9 @@
 import axios from 'axios'
 import { Toast } from 'mint-ui';
 // 创建axios 实例对象
-const baseUrl = 'http://119.3.216.3:3210/api'
+// http://127.0.0.1:3210
+const baseUrl = '/api'
+// const baseUrl = 'http://119.3.216.3:3210/api'
 
 
 const service = axios.create({
@@ -12,6 +14,7 @@ const service = axios.create({
 // 请求拦截器
 service.interceptors.request.use(
   config => {
+    console.log(config);
     return config
   },
   error => {
@@ -52,11 +55,6 @@ function debounce( wait) {
   timer = setTimeout(() => {
     timer = null
   }, wait)
-}
-
-
-function request (){
-  
 }
 
 

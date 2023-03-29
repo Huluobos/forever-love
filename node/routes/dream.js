@@ -1,12 +1,11 @@
 var express = require('express');
 var router = express.Router();
 var {CusBASE64,ReBASE64} = require("../utils/base64.js"); //加密解密
-
 var dreams = require("../database/model/dreams")
-router.post("/",(req,res)=>{
-  let {num,name,uId} = req.body
-  console.log('num,name,uId: ', num,name,uId);
-  dreams.create({num,name,uId},(err,data)=>{
+// uId,createTime,destroyTime,dreamTitle,dreamDetail,isEnd,isLong,longCount,longHistory 
+router.get("/",(req,res)=>{
+  var {uId,isEnd,isLong,}= req.query  
+  dreams.find({uId,isEnd,isLong},(err,data)=>{
     if (err) {
       res.json({
           data: err,
@@ -18,28 +17,28 @@ router.post("/",(req,res)=>{
     res.json({
         data: data,
         code: 200,
-        msg: "入库成功",
+        msg: "success",
         ret: true
     })
-  })
+  }).sort({'createTime':-1})
+  // .skip(page * 1).limit(limit)
 })
 
 router.post("/add",(req,res)=>{
-  let {num,name,uId} = req.body
-  console.log('num,name,uId: ', num,name,uId);
-  dreams.create({num,name,uId},(err,data)=>{
+  let { uId,dreamTitle,dreamDetail,isLong } = req.body
+  dreams.create({uId,dreamTitle,dreamDetail,isLong},(err,data)=>{
     if (err) {
       res.json({
           data: err,
-          code: 500,
-          msg: "false",
+          code: 10001,
+          msg: "新增愿望失败",
           ret: false
       })
     }
     res.json({
         data: data,
-        code: 200,
-        msg: "入库成功",
+        code: 10000,
+        msg: "新增愿望成功",
         ret: true
     })
   })

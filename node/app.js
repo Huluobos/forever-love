@@ -16,12 +16,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // 页面
 var appPageRouter = require('./routes/app-page');
+app.use('/', appPageRouter);
 
 // 路由
 var dreamRouter = require('./routes/dream');
-// 页面
-app.use('/', appPageRouter);
-
 app.use('/api/dream', dreamRouter);
 
 

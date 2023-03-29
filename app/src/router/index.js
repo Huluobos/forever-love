@@ -13,21 +13,42 @@ export default new Router({
         {
           path: '/',
           name: 'index',
+          meta:{
+            showHeader:true,
+            headerName:"首页",
+          },
           component:()=>import('@/views/index/index'),
         },
         {
           path: 'draw',
           name: 'draw',
+          meta:{
+            showHeader:false,
+            headerName:"抽奖",
+          },
           component:()=>import('@/views/draw/draw'),
         },
         {
-          path: 'list',
-          name: 'list',
-          component:()=>import('@/views/list/list'),
+          path: 'dream',
+          name: 'dream',
+          meta:{
+            showHeader:false,
+            headerName:"愿望",
+          },
+          component:()=>import('@/views/dream/dream'),
         }
       ]
     },
-   
+
+    {
+      path: '/login',
+      name: 'login',
+      meta:{
+        showHeader:false,
+        headerName:"登录",
+      },
+      component:()=>import('@/views/login/login'),
+    },
 
   ]
 })
