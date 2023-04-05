@@ -8,33 +8,38 @@
     </mt-navbar>
     <mt-tab-container v-model="selected">
       <mt-tab-container-item id="0">
-        <dreamList :params="dataList[0]" v-if="selected === '0'"></dreamList>
+        <DreamList :prop="dataList[0]" v-if="selected === '0'"></DreamList>
       </mt-tab-container-item>
       <mt-tab-container-item id="1">
-        <dreamList :params="dataList[1]" v-if="selected === '1'"></dreamList>
+        <DreamList :prop="dataList[1]" v-if="selected === '1'"></DreamList>
       </mt-tab-container-item>
       <mt-tab-container-item id="2">
-         <dreamList :params="dataList[2]" v-if="selected === '2'"></dreamList>
+         <DreamList :paproprams="dataList[2]" v-if="selected === '2'"></DreamList>
       </mt-tab-container-item>
       <mt-tab-container-item id="3">
-        <dreamList :params="dataList[3]" v-if="selected === '3'"></dreamList>
+        <DreamHistory :prop="dataList[3]" v-if="selected === '3'"></DreamHistory>
       </mt-tab-container-item>
     </mt-tab-container>
+    
+    <DreamAddBtn></DreamAddBtn>
   </div>
 </template>
 
 <script>
-import dreamList from "./dream-list.vue";
+import DreamList from "./list.vue";
+import DreamHistory from "./history.vue";
+import DreamAddBtn from "./components/addBtn.vue";
 export default {
-  components: { dreamList,},
+  components: { DreamList,DreamHistory,DreamAddBtn},
   data() {
     return {
       selected: "0",
       dataList:[  // 日常任务0  我的愿望1  对方愿望2  达成历史3
+        {isEnd:false,isLong:true,}, //uid,
+        {isEnd:false,isLong:false,},//uid,
         {isEnd:false,isLong:false,}, //uid,
-        {isEnd:true,isLong:false,},
-        {isEnd:true,isLong:false,},
-        {isEnd:true,isLong:false,},
+
+        {isEnd:true,isLong:false,}, //uid, 只展示达成短期的任务
       ]
       
       

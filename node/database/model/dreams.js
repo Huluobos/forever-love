@@ -7,7 +7,7 @@ var {timeAlls,timeTrans} = require('../../utils/time');
 var dreams = new mongoose.Schema({
     uId:{ type:String},//创建人
     createTime:{ type:Number,default: new Date().getTime()},//创建时间
-    destroyTime:{ type:Number, default:'0'},//完成时间
+    destroyTime:{ type:Number, default: new Date().getTime()},//完成时间
     dreamTitle:{ type:String,default:''},//愿望标题
     dreamDetail:{ type:String,default:''},//愿望内容
     isEnd:{type:Boolean, default:false },//是否关闭愿望 （愿望是否达成）

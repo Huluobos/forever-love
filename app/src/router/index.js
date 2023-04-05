@@ -36,6 +36,15 @@ export default new Router({
             headerName:"愿望",
           },
           component:()=>import('@/views/dream/dream'),
+        },
+        {
+          path: 'dream-add',
+          name: 'dream-add',
+          meta:{
+            showHeader:true,
+            headerName:"新建愿望",
+          },
+          component:()=>import('@/views/dream/add'),
         }
       ]
     },
@@ -52,3 +61,4 @@ export default new Router({
 
   ]
 })
+

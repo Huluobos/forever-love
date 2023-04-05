@@ -1,23 +1,24 @@
 /**
- * 用户列表
+ * 用户 登录 新增
  */
 var mongoose = require('mongoose');
+
     var users = new mongoose.Schema({
-        userName:{
+        userName:{ //昵称
             type:String
         },
-        uId:{
+        uId:{ //登录账号 登录凭证
             type:String,
         },
-        pwd:{
+        pwd:{ //密码
             type:String,
             default:"123"
         },
-        sex:{
+        sex:{ //性别
             type:Boolean,
             default:true //  true代表男 ，false 代表 女
         },
-        loginTime:{
+        loginTime:{ //登录时间
             type:String,
             default:""
         }

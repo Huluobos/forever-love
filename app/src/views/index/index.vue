@@ -6,7 +6,7 @@
             
      1111111111111111111111111111111FFFFF 
     -->
-    AHSGSDHHSOJCdn道具宝石记得
+    <mt-button @click="loginOut">退出登录</mt-button>
     </div>
 
   </div>
@@ -22,7 +22,13 @@ export default {
   },
 
   methods: {
-
+    loginOut(){
+      localStorage.setItem("user",'')
+      this.$nextTick(()=>{
+        this.$router.replace('/login')
+      })
+      
+    }
   },
   created () {
     console.log('randomNum: ', randomNum(0, 100))

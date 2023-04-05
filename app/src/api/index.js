@@ -11,18 +11,18 @@ export function getDream(params) {
   });
 }
 // 手动工作统计
-export function postDream(date) {
+export function postDream(data) {
   return request({
     url: "/dream",
-    date: date,
+    data: data,
     method: "post"
   });
 }
 // 手动工作统计
-export function login(date) {
+export function login(data) {
   return request({
     url: "/login",
-    date: date,
+    data: data,
     method: "post"
   });
 }

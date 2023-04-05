@@ -20,7 +20,11 @@ app.use('/', appPageRouter);
 
 // 路由
 var dreamRouter = require('./routes/dream');
+var loginRouter = require('./routes/login');
+
+app.use('/api/login', loginRouter);
 app.use('/api/dream', dreamRouter);
+
 
 
 

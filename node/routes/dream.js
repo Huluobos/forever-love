@@ -5,7 +5,13 @@ var dreams = require("../database/model/dreams")
 // uId,createTime,destroyTime,dreamTitle,dreamDetail,isEnd,isLong,longCount,longHistory 
 router.get("/",(req,res)=>{
   var {uId,isEnd,isLong,}= req.query  
-  dreams.find({uId,isEnd,isLong},(err,data)=>{
+  
+  const data = {}
+  uId ? data['uId'] = uId  : false
+  isEnd ? data['isEnd'] = isEnd  : false
+  isLong ? data['isLong'] = isLong  : false
+
+  dreams.find(data,(err,data)=>{
     if (err) {
       res.json({
           data: err,
@@ -13,6 +19,13 @@ router.get("/",(req,res)=>{
           msg: "false",
           ret: false
       })
+    }
+    if(data.length && data.length>0){
+      data.map((item)=>{ 
+        item.dreamTitle = ReBASE64(item.dreamTitle)
+        item.dreamDetail = ReBASE64(item.dreamDetail)
+        return item
+     })
     }
     res.json({
         data: data,
@@ -26,7 +39,13 @@ router.get("/",(req,res)=>{
 
 router.post("/add",(req,res)=>{
   let { uId,dreamTitle,dreamDetail,isLong } = req.body
-  dreams.create({uId,dreamTitle,dreamDetail,isLong},(err,data)=>{
+  const data = {
+    uId:uId,
+    dreamTitle:CusBASE64(dreamTitle),
+    dreamDetail:CusBASE64(dreamDetail),
+    isLong:isLong,
+  }
+  dreams.create(data,(err,data)=>{
     if (err) {
       res.json({
           data: err,

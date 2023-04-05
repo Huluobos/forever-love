@@ -2,7 +2,7 @@
   <div>
     <mt-header fixed :title="$route.meta.headerName">
       <mt-button v-if="$route.meta.showHeader === true" icon="back" slot="left"
-        >返回</mt-button
+        @click="routerBack">返回</mt-button
       >
       <!-- <mt-button v-if="$route.meta.showHeader === true" icon="more" slot="right"></mt-button> -->
     </mt-header>
@@ -15,7 +15,11 @@ export default {
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    routerBack(){
+      this.$router.back()
+    }
+  },
   created() {},
   destroyed() {},
 };
