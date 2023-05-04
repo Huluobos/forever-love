@@ -18,6 +18,7 @@ export function postDream(data) {
     method: "post"
   });
 }
+
 // 新增愿望
 export function addDream(data) {
   return request({
