@@ -18,7 +18,15 @@ export function postDream(data) {
     method: "post"
   });
 }
-// 手动工作统计
+// 新增愿望
+export function addDream(data) {
+  return request({
+    url: "/dream/add",
+    data: data,
+    method: "post"
+  });
+}
+
 export function login(data) {
   return request({
     url: "/login",

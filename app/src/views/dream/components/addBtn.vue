@@ -208,12 +208,15 @@ export default {
   position: fixed;
 }
 .content {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 3rem;
+  height: 3rem;
   background: #716af2;
   box-shadow: 0px 0px 10px 2px #a299ff;
   border-radius: 50%;
   position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   /* padding: 0.5em; */
 }
 </style>

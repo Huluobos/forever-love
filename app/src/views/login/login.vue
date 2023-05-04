@@ -31,6 +31,13 @@
 import { Toast, Indicator } from "mint-ui";
 import { login } from "../../api/index";
 export default {
+  // 女
+  // 账号： 0
+  // 密码：123
+
+  // 男
+  // 账号： 1
+  // 密码：123
   data() {
     return {
       uId: "",
@@ -38,7 +45,7 @@ export default {
     };
   },
   created(){
-    // 
+    //
   },
   methods: {
     userLogin() {
@@ -50,7 +57,7 @@ export default {
         setTimeout(()=>{
             Indicator.close();
          },1000)
-       
+
         if (res.ret !== true) {
           Toast({
             message: res.msg,
@@ -64,7 +71,7 @@ export default {
             position: "bottom",
             duration: 3000,
           });
-         
+
           localStorage.setItem("user",JSON.stringify(res.data))
           setTimeout(()=>{
             this.$nextTick(()=>{

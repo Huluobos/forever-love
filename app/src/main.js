@@ -5,11 +5,18 @@ import './router/permission'
 
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
-Vue.config.productionTip = false
+
 import VueLuckyCanvas from '@lucky-canvas/vue'
+
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+
 import './style/reset.css';
+
+Vue.config.productionTip = false
 Vue.use(VueLuckyCanvas)
 Vue.use(MintUI)
+Vue.use(ElementUI);
 
 new Vue({
   el: '#app',
